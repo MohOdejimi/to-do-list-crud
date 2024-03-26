@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo's</h1>
+
+    <h2>Add A Task:</h2>
+ 
+    <ul class = 'tasks'>
+        <% for(let i = 0; i < tasks.length; i++) {%>
+            <li>
+                 <% if (tasks[i].completed === true) { %>
+                    <span class = 'completed'><%= tasks[i].task %></span>
+                <% } else { %>
+                    <span><%= tasks[i].task %></span>
+                <% } %>   
+                <span id = 'delete' class='fa fa-trash'></span>  
+            </li>
+       <% } %>
+      
+    </ul>
+
+    <h2>Items left: <%= itemsLeft %></h2>
+
+    <form action="/addTask" method="POST">
+        <input type="text" placeholder="Add Task" name="task">
+        <input type="submit">
+    </form>
+    
+
+    <script src='js/client.js'></script>
+</body>
+</html>

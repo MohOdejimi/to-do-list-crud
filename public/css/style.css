@@ -1,0 +1,12 @@
+h1 {
+    color: blue;
+}
+body {
+    font-family: jost;
+}
+#delete {
+    cursor: pointer;
+}
+.completed {
+    text-decoration: line-through;
+}
